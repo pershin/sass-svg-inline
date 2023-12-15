@@ -1,0 +1,19 @@
+{
+  "name": "sass-svg-inline",
+  "version": "1.0.0",
+  "description": "Inline SVG for Sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pershin/sass-svg-inline.git"
+  },
+  "author": "Sergey Pershin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pershin/sass-svg-inline/issues"
+  },
+  "homepage": "https://github.com/pershin/sass-svg-inline#readme"
+}
