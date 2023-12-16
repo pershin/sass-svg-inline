@@ -39,6 +39,15 @@ gulp.task('default', gulp.series('buildStyles'));
 }
 ```
 
+### img/circle.svg
+
+```xml
+<?xml version="1.0" standalone="no"?>
+<svg width="64" height="64" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="32" fill="red"/>
+</svg>
+```
+
 ## License
 
   [MIT](LICENSE)
