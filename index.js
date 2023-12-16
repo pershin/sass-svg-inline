@@ -1,18 +1,20 @@
 'use strict';
 
 const fs = require('fs');
+const resolve = require('path').resolve;
 const types = require('sass').types;
 
-var dir = '';
+var directory = '';
 
 exports.setDir = function (path) {
-  dir = path;
+  directory = path;
 };
 
 exports.svg = function (path) {
-  let content, data;
+  let content, data, filename;
 
-  content = fs.readFileSync(dir + path.getValue());
+  filename = resolve(directory, path.getValue());
+  content = fs.readFileSync(filename);
   data = content.toString('base64');
 
   return new types.String('url(data:image/svg+xml;base64,' + data + ')');
