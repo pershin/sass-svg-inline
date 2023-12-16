@@ -13,27 +13,29 @@ npm i sass-svg-inline
 ```js
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const sassSvgInline = require('sass-svg-inline');
+const svg = require('sass-svg-inline');
 
-sassSvgInline.setDir('./img/');
-
-gulp.task('default', function (cb) {
-  gulp.src(['test.scss'])
+function buildStyles() {
+  return gulp.src('./sass/**/*.scss')
           .pipe(sass({
             functions: {
-              'svg($path)': sassSvgInline.svg
+              'svg($path)': svg.setDir('./img')
             }
-          }))
-          .pipe(gulp.dest('./'));
-  cb();
-});
+          }).on('error', sass.logError))
+          .pipe(gulp.dest('./css'));
+}
+
+gulp.task('buildStyles', buildStyles);
+gulp.task('default', gulp.series('buildStyles'));
 ```
 
-### test.scss
+### sass/style.scss
 
 ```css
-.test {
-  background-image: svg('123.svg');
+.circle {
+  background-image: svg('circle.svg');
+  height: 64px;
+  width: 64px;
 }
 ```
 
